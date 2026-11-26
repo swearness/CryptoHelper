@@ -2,6 +2,8 @@ from aiogram import Router, html
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 
+from keyboards.main_menu import keyboard
+
 router = Router()
 
 
@@ -12,5 +14,6 @@ async def start_handler(message: Message) -> None:
         👋 Hi, {html.bold(message.from_user.first_name)}!
         
 Welcome to {html.bold("Crypto Helper")} bot!
-        """
+        """,
+        reply_markup=keyboard,
     )
