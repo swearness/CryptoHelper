@@ -32,6 +32,8 @@ MANIFEST
 *.manifest
 *.spec
 
+*.pyc
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
@@ -158,6 +160,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.env.*
+!.env.example
+
+.venv/
 
 # Conda environments
 conda-meta/
@@ -221,3 +227,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+.idea/
+*.iml
+
