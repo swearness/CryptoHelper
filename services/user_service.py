@@ -5,11 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from database.models.user_model import User
 
 
-async def register_user(
-    session: AsyncSession,
-    user_id: int,
-    username: str | None
-):
+async def register_user(session: AsyncSession, user_id: int, username: str | None):
     user = await session.get(User, user_id)
 
     if user:
@@ -20,7 +16,7 @@ async def register_user(
         username=username,
         fiat_currency="BTC",
         non_fiat_currency="USD",
-        balance=Decimal("0")
+        balance=Decimal(0),
     )
 
     session.add(user)
@@ -29,10 +25,7 @@ async def register_user(
     return user
 
 
-async def get_user(
-        session: AsyncSession,
-        user_id: int
-):
+async def get_user(session: AsyncSession, user_id: int):
     user = await session.get(User, user_id)
 
     if user:
