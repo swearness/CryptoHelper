@@ -1,4 +1,5 @@
 import pytest
+
 from services.api.crypto_api import CryptoAPI
 
 
