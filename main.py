@@ -7,18 +7,26 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
 from config import get_token
+from database.database import async_session, create_tables, shutdown_db
 from handlers.routers import main_router
-
-TOKEN = get_token()
+from middlewares.db import DbSessionMiddleware
 
 
 async def main() -> None:
-    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    bot = Bot(get_token(), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
+
+    await create_tables()
+
+    dp.update.middleware(DbSessionMiddleware(async_session))
 
     dp.include_router(main_router)
 
-    await dp.start_polling(bot)
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await shutdown_db()
+        await bot.session.close()
 
 
 if __name__ == "__main__":
