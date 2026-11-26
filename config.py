@@ -21,3 +21,12 @@ def get_database_url() -> str:
         raise ValueError("DATABASE_URL doesn't exists!")
 
     return url
+
+
+def get_paprica_url() -> str:
+    url = getenv("COINPAPRIKA_URL")
+
+    if not url:
+        raise ValueError("COINPAPRIKA_URL doesn't exists!")
+
+    return url
