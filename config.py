@@ -1,9 +1,11 @@
-from dotenv import load_dotenv
 from os import getenv
+
+from dotenv import load_dotenv
 
 load_dotenv()
 
 BOT_TOKEN = getenv("BOT_TOKEN")
+
 
 def get_token() -> str:
     if not BOT_TOKEN:

@@ -5,6 +5,4 @@ from . import start
 main_router = Router()
 
 
-main_router.include_routers(
-    start.router
-)
+main_router.include_routers(start.router)

@@ -11,6 +11,7 @@ from handlers.routers import main_router
 
 TOKEN = get_token()
 
+
 async def main() -> None:
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
