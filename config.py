@@ -4,11 +4,20 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BOT_TOKEN = getenv("BOT_TOKEN")
-
 
 def get_token() -> str:
-    if not BOT_TOKEN:
-        raise ValueError("BOT_TOKEN не найден в .env")
+    token = getenv("BOT_TOKEN")
 
-    return BOT_TOKEN
+    if not token:
+        raise ValueError("BOT_TOKEN doesn't exists in .env")
+
+    return token
+
+
+def get_database_url() -> str:
+    url = getenv("DATABASE_URL")
+
+    if not url:
+        raise ValueError("DATABASE_URL doesn't exists!")
+
+    return url
