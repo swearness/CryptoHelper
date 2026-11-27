@@ -3,7 +3,6 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
         [InlineKeyboardButton(text="👤 Profile", callback_data="show_profile")],
-        [InlineKeyboardButton(text="⚙ Settings", callback_data="show_settings")],
         [
             InlineKeyboardButton(
                 text="💲 Currencies", callback_data="button_currencies"
