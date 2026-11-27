@@ -1,8 +1,8 @@
 from aiogram import Router
 
-from . import start
+from . import profile, start
 
 main_router = Router()
 
 
-main_router.include_routers(start.router)
+main_router.include_routers(start.router, profile.router)
