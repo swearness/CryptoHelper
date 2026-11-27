@@ -13,8 +13,8 @@ class User(Base):
 
     username: Mapped[str | None] = mapped_column(String(100), nullable=True)
 
-    fiat_currency: Mapped[str] = mapped_column(String(100), default="BTC")
+    fiat_currency: Mapped[str] = mapped_column(String(100), default="USD")
 
-    non_fiat_currency: Mapped[str | None] = mapped_column(String(100), default="USD")
+    non_fiat_currency: Mapped[str | None] = mapped_column(String(100), default="BTC")
 
     balance: Mapped[Decimal] = mapped_column(Numeric(20, 8), default=Decimal(0))
