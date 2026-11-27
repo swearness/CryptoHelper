@@ -1,5 +1,5 @@
-from aiogram.types import CallbackQuery
 from aiogram import Router
+from aiogram.types import CallbackQuery
 
 from services.menu_service import show_main_menu
 
