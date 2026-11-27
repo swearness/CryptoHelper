@@ -3,7 +3,7 @@ from aiogram.types import CallbackQuery
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from keyboards.settings import keyboard
-from services.user_service import get_user
+from services.user import get_user
 
 router = Router()
 

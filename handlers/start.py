@@ -3,8 +3,8 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from services.menu_service import show_main_menu
-from services.user_service import register_user
+from services.menu import show_main_menu
+from services.user import register_user
 
 router = Router()
 

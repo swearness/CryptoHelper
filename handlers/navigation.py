@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import CallbackQuery
 
-from services.menu_service import show_main_menu
+from services.menu import show_main_menu
 
 router = Router()
 
