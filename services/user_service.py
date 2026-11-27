@@ -14,8 +14,6 @@ async def register_user(session: AsyncSession, user_id: int, username: str | Non
     user = User(
         id=user_id,
         username=username,
-        fiat_currency="BTC",
-        non_fiat_currency="USD",
         balance=Decimal(0),
     )
 
@@ -26,9 +24,4 @@ async def register_user(session: AsyncSession, user_id: int, username: str | Non
 
 
 async def get_user(session: AsyncSession, user_id: int):
-    user = await session.get(User, user_id)
-
-    if user:
-        return user
-    else:
-        return "User not found"
+    return await session.get(User, user_id)
